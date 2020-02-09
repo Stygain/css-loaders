@@ -6,6 +6,7 @@ import PulseBubble2 from './loaders/pulseBubble2.js';
 import Ripple from './loaders/ripple.js';
 import Rect1 from './loaders/rect1.js';
 import Rect2 from './loaders/rect2.js';
+import CircleRotate from './loaders/circleRotate.js';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Ripple />
       <Rect1 />
       <Rect2 />
+      <CircleRotate />
     </div>
   );
 }
