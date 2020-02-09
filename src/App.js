@@ -7,21 +7,15 @@ import Ripple from './loaders/ripple.js';
 import Rect1 from './loaders/rect1.js';
 import Rect2 from './loaders/rect2.js';
 import CircleRotate from './loaders/circleRotate.js';
-import HamburgerArrow from './hamburgerArrow.js';
+
+
+import Carousel from './carousel.js';
 
 
 function App() {
   return (
     <div>
-      <HamburgerArrow />
-      <PulseBar1 />
-      <PulseBar2 />
-      <PulseBubble1 />
-      <PulseBubble2 />
-      <Ripple />
-      <Rect1 />
-      <Rect2 />
-      <CircleRotate />
+      <Carousel />
     </div>
   );
 }
