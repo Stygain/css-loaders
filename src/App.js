@@ -5,6 +5,8 @@ import PulseBubble1 from './loaders/pulseBubble1.js';
 import PulseBubble2 from './loaders/pulseBubble2.js';
 import Ripple from './loaders/ripple.js';
 import Rect1 from './loaders/rect1.js';
+import Rect2 from './loaders/rect2.js';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <PulseBubble2 />
       <Ripple />
       <Rect1 />
+      <Rect2 />
     </div>
   );
 }
