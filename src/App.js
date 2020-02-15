@@ -3,7 +3,7 @@ import { jsx, css } from '@emotion/core';
 import { useState } from 'react';
 
 import HamburgerX from './hamburgerX.js';
-import Menu from './menu.js';
+// import Menu from './menu.js';
 
 
 import Carousel from './carousel.js';
