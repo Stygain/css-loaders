@@ -7,10 +7,29 @@ import ArrowRight from './ArrowRight.js';
 import ProgressDots from './ProgressDots.js';
 
 
+const dotData = [
+  {
+    somedata: "somevalue"
+  },
+  {
+    somedata: "somevalue"
+  },
+  {
+    somedata: "somevalue"
+  },
+  {
+    somedata: "somevalue"
+  },
+  {
+    somedata: "somevalue"
+  }
+]
+
+console.log(dotData.length)
+
 function Carousel() {
   const [ current, setCurrent ] = useState(0);
   const styling = css`
-    border: 5px solid red;
     position: absolute;
     top: 0;
     left: 0;
@@ -22,13 +41,13 @@ function Carousel() {
     <div css={styling}>
       {current == 0 ?
         <ArrowRight current={current} setCurrent={setCurrent} /> :
-        current == 5 ?
+        current == dotData.length-1 ?
         <ArrowLeft current={current} setCurrent={setCurrent} /> :
         <div>
           <ArrowLeft current={current} setCurrent={setCurrent} />
           <ArrowRight current={current} setCurrent={setCurrent} />
         </div>}
-      <ProgressDots current={current} total={5} />
+      <ProgressDots current={current} data={dotData} setCurrent={setCurrent} />
   	</div>
   );
 }
