@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
-import HamburgerX from './hamburgerX.js';
-
 
 function Carousel() {
   const styling = css`
@@ -12,16 +10,58 @@ function Carousel() {
     left: 0;
     width: 100%;
     height: 100%;
-  `;
-  const hamburgerStyle = css`
-    position: relative;
-    top: 20px;
-    left: 20px;
+    z-index: -1;
+
+    .button-container {
+      ${'' /* border: 1px solid green; */}
+
+      position: absolute;
+      top: 48%;
+      width: 40px;
+      height: 40px;
+
+      cursor: pointer;
+    }
+
+    .button-container.left {
+      left: 10px;
+    }
+
+    .button-container.right {
+      right: 10px;
+    }
+
+    .arrow {
+      width: 25px;
+      height: 8px;
+      background-color: #000;
+    }
+
+    .arrow.top.right {
+      transform: translateY(10px) translateX(7px) rotate(45deg);
+    }
+
+    .arrow.bot.right {
+      transform: translateY(14px) translateX(7px) rotate(-45deg);
+    }
+
+    .arrow.top.left {
+      transform: translateY(10px) translateX(7px) rotate(-45deg);
+    }
+
+    .arrow.bot.left {
+      transform: translateY(14px) translateX(7px) rotate(45deg);
+    }
   `;
   return (
     <div css={styling}>
-  	  <div css={hamburgerStyle}>
-        <HamburgerX />
+      <div className="button-container right">
+        <div className="arrow top right"></div>
+        <div className="arrow bot right"></div>
+      </div>
+      <div className="button-container left">
+        <div className="arrow top left"></div>
+        <div className="arrow bot left"></div>
       </div>
   	</div>
   );
