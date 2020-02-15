@@ -3,6 +3,8 @@ import { jsx, css } from '@emotion/core';
 
 function PulseBar1() {
   const styling = css`
+    ${'' /* border: 1px solid green; */}
+
     width: 120px;
     display: flex;
     justify-content: space-between;

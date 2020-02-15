@@ -10,6 +10,7 @@ function ProgressDots(props) {
     position: absolute;
     bottom: 10px;
     height: 40px;
+    z-index: 3;
 
     .dot-container {
       ${'' /* border: 1px solid green; */}

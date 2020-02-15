@@ -3,8 +3,10 @@ import { jsx, css } from '@emotion/core';
 
 function CircleRotate() {
   const styling = css`
-    width: 80px;
-    height: 80px;
+    ${'' /* border: 1px solid green; */}
+
+    width: 75px;
+    height: 75px;
     position: relative;
 
     div {

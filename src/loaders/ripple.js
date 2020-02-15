@@ -3,9 +3,15 @@ import { jsx, css } from '@emotion/core';
 
 function Ripple() {
   const styling = css`
-    width: 40px;
-    height: 40px;
+    ${'' /* border: 1px solid green; */}
+
+    width: 100px;
+    height: 100px;
     position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     div {
       width: 30px;
@@ -28,18 +34,18 @@ function Ripple() {
       from {
         border: 5px solid;
         opacity: 1;
-        top: 35px;
-        left: 35px;
+        top: 45%;
+        left: 45%;
         width: 0px;
         height: 0px;
       }
       to {
         border: 5px solid;
         opacity: 0;
-        top: 0;
-        left: 0;
-        width: 70px;
-        height: 70px;
+        top: 10%;
+        left: 10%;
+        width: 69px;
+        height: 69px;
         transform: scale(1.3);
       }
     }

@@ -3,10 +3,13 @@ import { jsx, css } from '@emotion/core';
 
 function PulseBubble2() {
   const styling = css`
+    ${'' /* border: 1px solid green; */}
+
     width: 120px;
+    height: 35px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     div {
       width: 20px;

@@ -11,6 +11,7 @@ function ArrowLeft(props) {
       top: 48%;
       width: 40px;
       height: 40px;
+      z-index: 3;
 
       cursor: pointer;
     }

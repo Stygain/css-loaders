@@ -3,6 +3,8 @@ import { jsx, css } from '@emotion/core';
 
 function Rect2() {
   const styling = css`
+    ${'' /* border: 1px solid green; */}
+
     width: 80px;
     height: 80px;
     position: relative;
