@@ -35,14 +35,14 @@ function HamburgerX(props) {
     }
   `;
   return (
-    <div css={styling} onClick={
+    <div css={styling} id="button" onClick={
         () => {
           props.clickhandler(!props.click)
         }
       }>
-  	  <div className={props.click ? "change" : ""}></div>
-  	  <div className={props.click ? "change" : ""}></div>
-  	  <div className={props.click ? "change" : ""}></div>
+  	  <div className={props.click === true ? "change" : ""}></div>
+  	  <div className={props.click === true ? "change" : ""}></div>
+  	  <div className={props.click === true ? "change" : ""}></div>
   	</div>
   );
 }

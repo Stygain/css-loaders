@@ -3,14 +3,14 @@ import { jsx, css } from '@emotion/core';
 import { useState } from 'react';
 
 import HamburgerX from './hamburgerX.js';
-// import Menu from './menu.js';
+import Menu from './menu.js';
 
 
 import Carousel from './carousel.js';
 
 
 function App() {
-  const [clicked, setClicked] = useState(false);//temp set to false
+  const [clicked, setClicked] = useState(true);
   const hamburgerStyle = css`
     position: relative;
     top: 20px;
@@ -22,7 +22,7 @@ function App() {
   	  <div css={hamburgerStyle}>
         <HamburgerX click={clicked} clickhandler={setClicked}/>
       </div>
-      {/* <Menu click={clicked}/> */}
+      <Menu click={clicked}/>
       <Carousel />
     </div>
   );
