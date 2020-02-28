@@ -13,16 +13,11 @@ function Menu(props) {
     text-align: center;
     margin: 0;
 
-    ${'' /* top: 0;
-    left: 0;
-    width: 0;
-    height: 0; */}
     top: -100%;
     left: -100%;
     width: 100%;
     height: 100%;
 
-    ${'' /* border-radius: 100%; */}
     border-radius: 0;
 
     display: flex;
@@ -40,22 +35,11 @@ function Menu(props) {
       left: 0;
 
       transition: 0.8s ease-in-out;
-
-      ${'' /* border-radius: 0; */}
-      ${'' /* animation-name: test;
-      animation-duration: 1.5s;
-      animation-timing-function: cubic-bezier(.35,0,0,.92);
-      animation-delay: 0s;
-      animation-iteration-count: 1;
-      animation-direction: ${props.click ? "normal" : "reverse"};
-      animation-fill-mode: both; */}
     }
 
     .menu {
       ${'' /* border: 1px solid red; */}
 
-      ${'' /* border-radius: 10px; */}
-      ${'' /* background-color: rgb(22, 200, 125); */}
       width: 50%;
       height: 50%;
       margin-bottom: 200%;
@@ -65,13 +49,7 @@ function Menu(props) {
       align-items: center;
       justify-content: flex-start;
 
-      ${'' /* box-shadow: 10px 10px 8px 0px rgba(0,0,0,0.75); */}
-
       transition: 0.8s ease-in-out 0s;
-
-      ${'' /* position: absolute;
-      width: 100%;
-      height: 100%; */}
     }
 
     .menu.open {
@@ -86,11 +64,9 @@ function Menu(props) {
       font-size: 26px;
       white-space: nowrap;
       overflow: hidden;
-      ${'' /* max-height: 40px; */}
       width: 0px;
 
       margin: 10px;
-      ${'' /* text-shadow: 3px 2px 0px rgba(0,0,0,0.75); */}
     }
 
     .item.link {
@@ -100,22 +76,22 @@ function Menu(props) {
 
     .menu.open .item {
       width: 100%;
-      ${'' /* transition: 0.8s ease-in-out 0.3s; */}
     }
 
-    .menu .item:nth-child(1) {
+    .menu .item {
+      transition: 0.5s ease-in-out 0s;
+    }
+
+    .menu.open .item:nth-child(1) {
       transition: 0.8s ease-in-out 0.6s;
-      ${'' /* transition: width 1.5s ease-in-out 2s; */}
     }
 
-    .menu .item:nth-child(2) {
+    .menu.open .item:nth-child(2) {
       transition: 0.8s ease-in-out 1s;
-      ${'' /* transition: width 1.5s ease-in-out 2s; */}
     }
 
-    .menu .item:nth-child(3) {
+    .menu.open .item:nth-child(3) {
       transition: 0.8s ease-in-out 1.4s;
-      ${'' /* transition: width 1.5s ease-in-out 2s; */}
     }
 
     .item:nth-child(1) {
