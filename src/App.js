@@ -10,7 +10,7 @@ import Carousel from './carousel.js';
 
 
 function App() {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(true);
   const hamburgerStyle = css`
     position: relative;
     top: 20px;
