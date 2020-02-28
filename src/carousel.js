@@ -19,7 +19,6 @@ import Fill from './loaders/Fill.js';
 
 
 const dotData = [
-  <Fill />,
   <Square />,
   <PulseBar1 />,
   <PulseBar2 />,
@@ -29,6 +28,18 @@ const dotData = [
   <Rect1 />,
   <Rect2 />,
   <CircleRotate />
+]
+
+const colorData = [
+  "rgb(153, 153, 153)",
+  "rgb(210, 210, 210)",
+  "rgb(210, 146, 146)",
+  "rgb(124, 168, 128)",
+  "rgb(139, 188, 191)",
+  "rgb(108, 126, 201)",
+  "rgb(218, 218, 218)",
+  "rgb(182, 245, 234)",
+  "rgb(188, 222, 181)",
 ]
 
 console.log(dotData.length)
@@ -43,6 +54,9 @@ function Content(props) {
     height: 100%;
     width: 100%;
     z-index: 1;
+
+    transition: background-color 0.5s cubic-bezier(.4,.38,.12,1);
+    background-color: ${colorData[props.current]};
 
     display: flex;
     justify-content: center;
@@ -91,7 +105,7 @@ function Carousel() {
           </div>}
 
       <Content current={current} data={dotData} />
-      <ProgressDots current={current} data={dotData} setCurrent={setCurrent} />
+      <ProgressDots current={current} data={dotData} colorData={colorData} setCurrent={setCurrent} />
   	</div>
   );
 }
