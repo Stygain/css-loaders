@@ -14,9 +14,13 @@ import Ripple from './loaders/ripple.js';
 import Rect1 from './loaders/rect1.js';
 import Rect2 from './loaders/rect2.js';
 import CircleRotate from './loaders/circleRotate.js';
+import Square from './loaders/Square.js';
+import Fill from './loaders/Fill.js';
 
 
 const dotData = [
+  <Fill />,
+  <Square />,
   <PulseBar1 />,
   <PulseBar2 />,
   <PulseBubble1 />,
