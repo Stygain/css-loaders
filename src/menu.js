@@ -40,7 +40,7 @@ function Menu(props) {
     .menu {
       ${'' /* border: 1px solid red; */}
 
-      width: 50%;
+      min-width: 50%;
       height: 50%;
       margin-bottom: 200%;
 
