@@ -17,15 +17,18 @@ function CircleRotate() {
     }
 
     div:nth-child(1) {
-      border: 8px solid rgb(55, 159, 228);
+      border: 8px solid;
+      border-color: rgb(55, 159, 228) transparent transparent transparent;
       animation: border-color-1 6s cubic-bezier(.76,0,.63,1) 0.25s infinite;
     }
     div:nth-child(2) {
-      border: 8px solid rgb(55, 159, 228);
+      border: 8px solid;
+      border-color: transparent rgb(55, 159, 228) transparent transparent;
       animation: border-color-2 6s cubic-bezier(.76,0,.63,1) 0.5s infinite;
     }
     div:nth-child(3) {
-      border: 8px solid rgb(55, 159, 228);
+      border: 8px solid;
+      border-color: transparent transparent rgb(55, 159, 228) transparent;
       animation: border-color-3 2s cubic-bezier(.76,0,.63,1) 0s infinite;
     }
 

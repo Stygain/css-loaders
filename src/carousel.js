@@ -18,33 +18,58 @@ import Square from './loaders/Square.js';
 import CircleRotateColor from './loaders/CircleRotateColor.js';
 
 
-const dotData = [
-  <CircleRotateColor />,
-  <Square />,
-  <PulseBar1 />,
-  <PulseBar2 />,
-  <PulseBubble1 />,
-  <PulseBubble2 />,
-  <Ripple />,
-  <Rect1 />,
-  <Rect2 />,
-  <CircleRotate />
+const pageData = [
+  {
+    anim: <CircleRotateColor />,
+    bgColor: "rgb(210, 210, 210)",
+    accentColor: ""
+  },
+  {
+    anim: <Square />,
+    bgColor: "rgb(153, 153, 153)",
+    accentColor: ""
+  },
+  {
+    anim: <PulseBar1 />,
+    bgColor: "rgb(210, 210, 210)",
+    accentColor: ""
+  },
+  {
+    anim: <PulseBar2 />,
+    bgColor: "rgb(210, 146, 146)",
+    accentColor: ""
+  },
+  {
+    anim: <PulseBubble1 />,
+    bgColor: "rgb(124, 168, 128)",
+    accentColor: ""
+  },
+  {
+    anim: <PulseBubble2 />,
+    bgColor: "rgb(139, 188, 191)",
+    accentColor: ""
+  },
+  {
+    anim: <Ripple />,
+    bgColor: "rgb(108, 126, 201)",
+    accentColor: ""
+  },
+  {
+    anim: <Rect1 />,
+    bgColor: "rgb(218, 218, 218)",
+    accentColor: ""
+  },
+  {
+    anim: <Rect2 />,
+    bgColor: "rgb(182, 245, 234)",
+    accentColor: ""
+  },
+  {
+    anim: <CircleRotate />,
+    bgColor: "rgb(188, 222, 181)",
+    accentColor: ""
+  }
 ]
-
-const colorData = [
-  "rgb(210, 210, 210)",
-  "rgb(153, 153, 153)",
-  "rgb(210, 210, 210)",
-  "rgb(210, 146, 146)",
-  "rgb(124, 168, 128)",
-  "rgb(139, 188, 191)",
-  "rgb(108, 126, 201)",
-  "rgb(218, 218, 218)",
-  "rgb(182, 245, 234)",
-  "rgb(188, 222, 181)",
-]
-
-console.log(dotData.length)
 
 function Content(props) {
   const styling = css`
@@ -58,7 +83,7 @@ function Content(props) {
     z-index: 1;
 
     transition: background-color 0.5s cubic-bezier(.4,.38,.12,1);
-    background-color: ${colorData[props.current]};
+    background-color: ${props.item.bgColor};
 
     display: flex;
     justify-content: center;
@@ -79,7 +104,7 @@ function Content(props) {
   return (
     <div css={styling}>
       <div className="centered">
-        {dotData[props.current]}
+        {props.item.anim}
       </div>
   	</div>
   );
@@ -99,15 +124,15 @@ function Carousel() {
     <div css={styling}>
       {current === 0 ?
         <ArrowRight current={current} setCurrent={setCurrent} /> :
-        current === dotData.length-1 ?
+        current === pageData.length-1 ?
           <ArrowLeft current={current} setCurrent={setCurrent} /> :
           <div>
             <ArrowLeft current={current} setCurrent={setCurrent} />
             <ArrowRight current={current} setCurrent={setCurrent} />
           </div>}
 
-      <Content current={current} data={dotData} />
-      <ProgressDots current={current} data={dotData} colorData={colorData} setCurrent={setCurrent} />
+      <Content item={pageData[current]} />
+      <ProgressDots current={current} data={pageData} setCurrent={setCurrent} />
   	</div>
   );
 }
