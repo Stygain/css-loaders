@@ -15,10 +15,11 @@ import Rect1 from './loaders/rect1.js';
 import Rect2 from './loaders/rect2.js';
 import CircleRotate from './loaders/circleRotate.js';
 import Square from './loaders/Square.js';
-import Fill from './loaders/Fill.js';
+import CircleRotateColor from './loaders/CircleRotateColor.js';
 
 
 const dotData = [
+  <CircleRotateColor />,
   <Square />,
   <PulseBar1 />,
   <PulseBar2 />,
@@ -31,6 +32,7 @@ const dotData = [
 ]
 
 const colorData = [
+  "rgb(210, 210, 210)",
   "rgb(153, 153, 153)",
   "rgb(210, 210, 210)",
   "rgb(210, 146, 146)",

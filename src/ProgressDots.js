@@ -16,7 +16,7 @@ function ProgressDots(props) {
       ${'' /* border: 1px solid green; */}
 
       margin: 0 auto;
-      width: 200px;
+      width: 270px;
       height: 100%;
 
       display: flex;
@@ -43,7 +43,7 @@ function ProgressDots(props) {
     .outer-dot:nth-child(${props.current + 1}) {
       ${'' /* border: 4px solid orange; */}
 
-      transform: scale(1.5);
+      transform: scale(1.7);
     }
   `;
   return (
