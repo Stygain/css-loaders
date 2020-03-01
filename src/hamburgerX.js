@@ -26,9 +26,11 @@ function HamburgerX(props) {
       transform: translateY(12px) scale(1.2) rotate(-135deg);
       background-color: rgb(117, 117, 117);
     }
+
     div:nth-child(2).change {
       opacity: 0;
     }
+
     div:nth-child(3).change {
       transform: translateY(-12px) scale(1.2) rotate(135deg);
       background-color: rgb(117, 117, 117);

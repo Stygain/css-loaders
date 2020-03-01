@@ -34,16 +34,25 @@ function ProgressDots(props) {
 
     .dot-container .dot {
       border-radius: 100%;
-      background-color: #000;
+      background-color: rgb(42, 42, 42);
       width: 10px;
       height: 10px;
+    }
 
+    .outer-dot:hover {
+      transform: scale(1.3);
     }
 
     .outer-dot:nth-child(${props.current + 1}) {
       ${'' /* border: 4px solid orange; */}
 
       transform: scale(1.7);
+    }
+
+    .outer-dot:nth-child(${props.current + 1}) .dot {
+      ${'' /* border: 4px solid orange; */}
+
+      background-color: #000;
     }
   `;
   return (
