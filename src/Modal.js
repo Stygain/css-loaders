@@ -8,7 +8,11 @@ import { setModalShow } from './redux/actions.js';
 function Modal(props) {
   const modalShow = useSelector(getModalShow);
 
+  const dispatch = useDispatch();
+
   const styling = css`
+    border: 1px solid red;
+
     @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
     font-family: 'Spartan', sans-serif;
 
@@ -20,11 +24,9 @@ function Modal(props) {
     margin: 0;
 
     top: -100%;
-    left: -100%;
+    left: 0%;
     width: 100%;
     height: 100%;
-
-    border-radius: 0;
 
     display: flex;
     flex-direction: row;
@@ -43,17 +45,41 @@ function Modal(props) {
       transition: 0.8s ease-in-out;
     }
 
+    .background {
+      ${'' /* border: 1px solid blue; */}
+
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+
+      background-color: rgb(255, 166, 143);
+
+      cursor: pointer;
+    }
+
     .menu {
-      ${'' /* border: 1px solid red; */}
+      border: 1px solid red;
 
       min-width: 50%;
       height: 50%;
       margin-bottom: 200%;
+      border-radius: 10px;
+      padding: 10px;
+      ${'' /* margin: 10px; */}
+
+      background-color: rgb(255, 255, 255);
+      z-index: 2;
 
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
+
+      ${'' /* overflow-x: hidden; */}
+      ${'' /* overflow-y: scroll; */}
+      overflow: hidden;
 
       transition: 0.8s ease-in-out 0s;
     }
@@ -64,96 +90,137 @@ function Modal(props) {
       transition: 0.8s ease-in-out 0.3s;
     }
 
-    .item {
-      ${'' /* border: 1px solid blue; */}
+    .text-container {
+      border: 1px solid blue;
 
-      font-size: 26px;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0px;
-
-      margin: 10px;
-    }
-
-    .item.link {
-      font-size: 38px;
-      font-weight: 600;
-    }
-
-    .menu.open .item {
-      width: 100%;
-    }
-
-    .menu .item {
-      transition: 0.5s ease-in-out 0s;
-    }
-
-    .menu.open .item:nth-child(1) {
-      transition: 0.8s ease-in-out 0.6s;
-    }
-
-    .menu.open .item:nth-child(2) {
-      transition: 0.8s ease-in-out 1s;
-    }
-
-    .menu.open .item:nth-child(3) {
-      transition: 0.8s ease-in-out 1.4s;
-    }
-
-    .item:nth-child(1) {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding-bottom: 3px;
-      border-bottom: 3px solid black;
-    }
-
-    a {
-      text-decoration: none;
       position: relative;
-      display: inline-block;
-      ${'' /* font-size: 20px; */}
-      ${'' /* font-weight: 300; */}
-      color: rgb(108, 108, 108);
-      transition: color .4s ease;
-      padding: 6px 0;
-      margin-bottom: 7px;
 
-      &:hover {
-        color: rgb(0, 0, 0);
+      background-color: rgb(255, 255, 255);
+      text-align: left;
+      width: 100%;
 
-        &::after,
-        &::before {
-          width: 100%;
-          left: 0;
-        }
+      transition: background-color 0.3s ease;
+    }
 
-      }
+    .text-container.css {
+      overflow-y: scroll;
+    }
 
-      &::after,
-      &::before {
-        content: '';
-        position: absolute;
-        top: calc(85%);
-        width: 0;
-        right: 0;
-        height: 6px;
-      }
+    .text-container:hover {
+      background-color: rgb(236, 236, 236);
+    }
 
-      &::before {
-        transition: width .4s cubic-bezier(0.51, 0.18, 0, 0.88) .1s;
-        background: rgb(136, 136, 136);
-      }
+    .text-container .type-tag {
+      border: 1px solid green;
 
-      &::after {
-        transition: width .2s cubic-bezier(0.29, 0.18, 0.26, 0.83);
-        background: rgb(0, 0, 0);
-      }
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      ${'' /* width: 35px; */}
+      ${'' /* height: 10px; */}
+      padding: 5px;
+      border-radius: 3px;
+    }
+
+    pre {
+      display: block;
+      font-family: monospace;
+      white-space: pre;
+      margin: 1em 0;
     }
   `;
   return (
     <div css={styling} className={modalShow === true ? "open" : ""}>
+      <div className="background" onClick={() => dispatch(setModalShow(false))}></div>
       <div className={modalShow === true ? "menu open" : "menu"}>
-        <div className="item">
+        <div className="text-container html">
+          <div className="type-tag">
+            HTML
+          </div>
+          <pre>
+            <code>
+              &#60;div&#62;
+            	<br />  &#60;div&#62;&#60;/div&#62;
+            	<br />  &#60;div&#62;&#60;/div&#62;
+            	<br />&#60;/div&#62;
+            </code>
+          </pre>
+        </div>
+        <div className="text-container css">
+          <div className="type-tag">
+            CSS
+          </div>
+          <pre>
+            <code>
+              div {'{'}
+              <br />  width: 60px;
+              <br />  height: 60px;
+              <br />  border-radius: 50%;
+              <br />  position: absolute;
+              <br />{'}'}
+<br />
+              <br />div:nth-child(1) {'{'}
+              <br />  border: 8px solid;
+              <br />  border-color: rgb(55, 159, 228) transparent transparent transparent;
+              <br />  animation: border-color-1 6s cubic-bezier(.76,0,.63,1) 0.25s infinite;
+              <br />{'}'}
+              <br />div:nth-child(2) {'{'}
+              <br />  border: 8px solid;
+              <br />  border-color: transparent rgb(55, 159, 228) transparent transparent;
+              <br />  animation: border-color-2 6s cubic-bezier(.76,0,.63,1) 0.5s infinite;
+              <br />{'}'}
+              <br />div:nth-child(3) {'{'}
+              <br />  border: 8px solid;
+              <br />  border-color: transparent transparent rgb(55, 159, 228) transparent;
+              <br />  animation: border-color-3 2s cubic-bezier(.76,0,.63,1) 0s infinite;
+              <br />{'}'}
+<br />
+              <br />@keyframes border-color-1 {'{'}
+              <br />  0% {'{'}
+              <br />    border-color: rgb(55, 159, 228) transparent transparent transparent;
+              <br />  {'}'}
+              <br />  25% {'{'}
+              <br />    border-color: transparent rgb(215, 98, 238) transparent transparent;
+              <br />    transform: rotate(360deg);
+              <br />  {'}'}
+              <br />  50% {'{'}
+              <br />    border-color: transparent transparent rgb(241, 78, 8) transparent;
+              <br />    transform: rotate(720deg);
+              <br />  {'}'}
+              <br />  75% {'{'}
+              <br />    border-color: transparent transparent transparent rgb(241, 211, 8);
+              <br />    transform: rotate(1080deg);
+              <br />  {'}'}
+              <br />  100% {'{'}
+              <br />    border-color: rgb(55, 159, 228) transparent transparent transparent;
+              <br />  {'}'}
+              <br />{'}'}
+<br />
+              <br />@keyframes border-color-2 {'{'}
+              <br />  0% {'{'}
+              <br />    border-color: transparent rgb(55, 159, 228) transparent transparent;
+              <br />  {'}'}
+              <br />  25% {'{'}
+              <br />    border-color: transparent transparent rgb(215, 98, 238) transparent;
+              <br />    transform: rotate(360deg);
+              <br />  {'}'}
+              <br />  50% {'{'}
+              <br />    border-color: transparent transparent transparent rgb(241, 78, 8);
+              <br />    transform: rotate(720deg);
+              <br />  {'}'}
+              <br />  75% {'{'}
+              <br />    border-color: rgb(241, 211, 8) transparent transparent transparent;
+              <br />    transform: rotate(1080deg);
+              <br />  {'}'}
+              <br />  100% {'{'}
+              <br />    border-color: transparent rgb(55, 159, 228) transparent transparent;
+              <br />  {'}'}
+              <br />{'}'}
+            </code>
+          </pre>
+        </div>
+        {/* <div className="item">
           Adam Barton
         </div>
         <div className="item link">
@@ -165,7 +232,7 @@ function Modal(props) {
           <a href="https://stygain.github.io/northwestvision/">
             Photography
           </a>
-        </div>
+        </div> */}
       </div>
   	</div>
 
