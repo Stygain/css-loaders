@@ -40,11 +40,11 @@ function ArrowRight(props) {
     }
 
     .arrow.top.right.hover {
-      transform: translateY(9px) translateX(6px) rotate(50deg);
+      transform: translateY(9px) translateX(6px) rotate(53deg);
     }
 
     .arrow.bot.right.hover {
-      transform: translateY(15px) translateX(6px) rotate(-50deg);
+      transform: translateY(15px) translateX(6px) rotate(-53deg);
     }
   `;
   return (

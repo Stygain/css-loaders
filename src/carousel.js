@@ -16,12 +16,13 @@ import Rect2 from './loaders/rect2.js';
 import CircleRotate from './loaders/circleRotate.js';
 import Square from './loaders/Square.js';
 import CircleRotateColor from './loaders/CircleRotateColor.js';
+import BarColor from './loaders/BarColor.js';
 
 
 const pageData = [
   {
     anim: <CircleRotateColor />,
-    bgColor: "rgb(210, 210, 210)",
+    bgColor: "rgba(226, 178, 178, 0.59)",
     accentColor: ""
   },
   {
@@ -32,6 +33,11 @@ const pageData = [
   {
     anim: <PulseBar1 />,
     bgColor: "rgb(210, 210, 210)",
+    accentColor: ""
+  },
+  {
+    anim: <BarColor />,
+    bgColor: "rgba(192, 226, 178, 0.59)",
     accentColor: ""
   },
   {
