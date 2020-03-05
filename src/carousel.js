@@ -125,6 +125,7 @@ function Content(props) {
 
 function Carousel() {
   const [ current, setCurrent ] = useState(0);
+
   const styling = css`
     position: absolute;
     top: 0;
@@ -133,6 +134,7 @@ function Carousel() {
     height: 100%;
     z-index: -1;
   `;
+
   return (
     <div css={styling}>
       {current === 0 ?

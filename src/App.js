@@ -5,6 +5,7 @@ import { useState } from 'react';
 import HamburgerX from './hamburgerX.js';
 import Menu from './menu.js';
 import Carousel from './carousel.js';
+import Modal from './Modal.js';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <HamburgerX click={clicked} clickhandler={setClicked}/>
       </div>
       <Menu click={clicked}/>
+      <Modal />
       <Carousel />
     </div>
   );
