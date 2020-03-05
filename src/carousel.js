@@ -60,16 +60,16 @@ const pageData = [
     bgColor: "rgb(108, 126, 201)",
     accentColor: ""
   },
-  {
-    anim: <Rect1 />,
-    bgColor: "rgb(218, 218, 218)",
-    accentColor: ""
-  },
-  {
-    anim: <Rect2 />,
-    bgColor: "rgb(182, 245, 234)",
-    accentColor: ""
-  },
+  // {
+  //   anim: <Rect1 />,
+  //   bgColor: "rgb(218, 218, 218)",
+  //   accentColor: ""
+  // },
+  // {
+  //   anim: <Rect2 />,
+  //   bgColor: "rgb(182, 245, 234)",
+  //   accentColor: ""
+  // },
   {
     anim: <CircleRotate />,
     bgColor: "rgb(188, 222, 181)",
