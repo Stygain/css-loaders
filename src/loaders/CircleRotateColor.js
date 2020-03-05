@@ -1,9 +1,18 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch } from 'react-redux';
+import { getModalShow } from '../redux/selectors.js';
+import { setModalShow } from '../redux/actions.js';
+
+
 function CircleRotate() {
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid green; */}
+
+    cursor: pointer;
 
     width: 75px;
     height: 75px;
@@ -96,7 +105,7 @@ function CircleRotate() {
     }
   `;
   return (
-    <div css={styling}>
+    <div css={styling} onClick={() => dispatch(setModalShow(true))}>
   	  <div></div>
   	  <div></div>
   	</div>

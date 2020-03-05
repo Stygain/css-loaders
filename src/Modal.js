@@ -1,7 +1,13 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getModalShow } from './redux/selectors.js';
+import { setModalShow } from './redux/actions.js';
+
 function Modal(props) {
+  const modalShow = useSelector(getModalShow);
+
   const styling = css`
     @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
     font-family: 'Spartan', sans-serif;
@@ -145,8 +151,8 @@ function Modal(props) {
     }
   `;
   return (
-    <div css={styling} className={props.modalShow === true ? "open" : ""}>
-      <div className={props.modalShow === true ? "menu open" : "menu"}>
+    <div css={styling} className={modalShow === true ? "open" : ""}>
+      <div className={modalShow === true ? "menu open" : "menu"}>
         <div className="item">
           Adam Barton
         </div>
