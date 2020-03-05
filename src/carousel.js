@@ -17,12 +17,19 @@ import CircleRotate from './loaders/circleRotate.js';
 import Square from './loaders/Square.js';
 import CircleRotateColor from './loaders/CircleRotateColor.js';
 import BarColor from './loaders/BarColor.js';
+import BubbleMove from './loaders/BubbleMove.js';
+
 
 
 const pageData = [
   {
     anim: <CircleRotateColor />,
-    bgColor: "rgba(226, 178, 178, 0.59)",
+    bgColor: "rgba(255, 255, 255, 1)",
+    accentColor: ""
+  },
+  {
+    anim: <BubbleMove />,
+    bgColor: "rgba(253, 255, 222, 1)",
     accentColor: ""
   },
   {
