@@ -1,9 +1,17 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
-function PulseBubble1() {
+import { useDispatch } from 'react-redux';
+import { getModalShow } from '../redux/selectors.js';
+import { setModalShow } from '../redux/actions.js';
+
+function BubbleMove() {
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid green; */}
+
+    cursor: pointer;
 
     width: 113px;
     height: 60px;
@@ -134,7 +142,7 @@ function PulseBubble1() {
     }
   `;
   return (
-    <div css={styling}>
+    <div css={styling} onClick={() => dispatch(setModalShow(true))}>
   	  <div></div>
   	  <div></div>
   	  <div></div>
@@ -143,4 +151,4 @@ function PulseBubble1() {
   );
 }
 
-export default PulseBubble1;
+export default BubbleMove;
