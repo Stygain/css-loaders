@@ -1,9 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch } from 'react-redux';
+import { setModalShow } from '../redux/actions.js';
+
 function BarColor() {
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid green; */}
+
+    cursor: pointer;
 
     width: 200px;
     height: 200px;
@@ -79,8 +86,9 @@ function BarColor() {
       100% { stroke: rgb(55, 159, 228); }
     }
   `;
+
   return (
-    <div css={styling}>
+    <div css={styling} onClick={() => dispatch(setModalShow(true))}>
       <svg width="100" height="100" viewBox="0 0 90 90">
         <polyline class="stroke-still" points="6,0 6,90"></polyline>
         <polyline class="stroke-still" points="32,0 32,90"></polyline>

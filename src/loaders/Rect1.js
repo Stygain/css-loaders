@@ -1,9 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch } from 'react-redux';
+import { setModalShow } from '../redux/actions.js';
+
 function Rect1() {
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid green; */}
+
+    cursor: pointer;
 
     width: 80px;
     height: 10px;
@@ -21,6 +28,7 @@ function Rect1() {
     div:nth-child(1) {
       animation: move 1s ease 0s infinite alternate;
     }
+
 
     @keyframes move {
       0% {
@@ -46,8 +54,9 @@ function Rect1() {
       }
     }
   `;
+
   return (
-    <div css={styling}>
+    <div css={styling} onClick={() => dispatch(setModalShow(true))}>
   	  <div></div>
   	</div>
   );

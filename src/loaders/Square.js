@@ -1,9 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch } from 'react-redux';
+import { setModalShow } from '../redux/actions.js';
+
 function Square() {
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid green; */}
+
+    cursor: pointer;
 
     width: 200px;
     height: 200px;
@@ -58,8 +65,9 @@ function Square() {
       100% { stroke: rgb(55, 159, 228); }
     }
   `;
+
   return (
-    <div css={styling}>
+    <div css={styling} onClick={() => dispatch(setModalShow(true))}>
       <svg width="100" height="100" viewBox="0 0 100 100">
         <polyline class="stroke-still" points="0,0 100,0 100,100"></polyline>
         <polyline class="stroke-still" points="0,0 0,100 100,100"></polyline>

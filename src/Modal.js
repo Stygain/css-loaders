@@ -36,6 +36,8 @@ function Modal(props) {
     align-items: center;
     justify-content: center;
 
+    transition: 0.8s ease-in-out;
+
     &.open {
       opacity: 100%;
       width: 100%;

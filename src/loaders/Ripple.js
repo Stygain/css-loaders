@@ -1,9 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch } from 'react-redux';
+import { setModalShow } from '../redux/actions.js';
+
 function Ripple() {
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid green; */}
+
+    cursor: pointer;
 
     width: 100px;
     height: 100px;
@@ -23,12 +30,15 @@ function Ripple() {
     div:nth-child(1) {
       animation: ripple 1.6s ease 0s infinite;
     }
+
     div:nth-child(2) {
       animation: ripple 1.6s ease 0.4s infinite;
     }
+
     div:nth-child(3) {
       animation: ripple 1.6s ease 0.8s infinite;
     }
+
 
     @keyframes ripple {
       from {
@@ -50,8 +60,9 @@ function Ripple() {
       }
     }
   `;
+
   return (
-    <div css={styling}>
+    <div css={styling} onClick={() => dispatch(setModalShow(true))}>
   	  <div></div>
   	  <div></div>
   	  <div></div>

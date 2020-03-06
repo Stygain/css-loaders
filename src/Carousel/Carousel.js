@@ -105,42 +105,171 @@ export const pageData = [
   {
     anim: <BubbleMove />,
     bgColor: "rgba(253, 255, 222, 1)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   {
     anim: <Square />,
     bgColor: "rgb(153, 153, 153)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+        <br />  &#60;svg width="100" height="100" viewBox="0 0 100 100"&#62;
+        <br />    &#60;polyline class="stroke-still" points="0,0 100,0 100,100"&#62;&#60;/polyline&#62;
+        <br />    &#60;polyline class="stroke-still" points="0,0 0,100 100,100"&#62;&#60;/polyline&#62;
+        <br />    &#60;polyline class="stroke-animation" points="0,0 100,0 100,100"&#62;&#60;/polyline&#62;
+        <br />    &#60;polyline class="stroke-animation" points="0,0 0,100 100,100"&#62;&#60;/polyline&#62;
+        <br />  &#60;/svg&#62;
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   {
     anim: <PulseBar1 />,
     bgColor: "rgb(210, 210, 210)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+        <br />  &#60;div&#62;&#60;/div&#62;
+        <br />  &#60;div&#62;&#60;/div&#62;
+        <br />  &#60;div&#62;&#60;/div&#62;
+        <br />  &#60;div&#62;&#60;/div&#62;
+        <br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   {
     anim: <BarColor />,
     bgColor: "rgba(192, 226, 178, 0.59)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+        <br />  <svg width="100" height="100" viewBox="0 0 90 90">
+        <br />    <polyline class="stroke-still" points="6,0 6,90"></polyline>
+        <br />    <polyline class="stroke-still" points="32,0 32,90"></polyline>
+        <br />    <polyline class="stroke-still" points="58,0 58,90"></polyline>
+        <br />    <polyline class="stroke-still" points="84,0 84,90"></polyline>
+        <br />    <polyline class="stroke-animation-outer" points="6,0 6,90"></polyline>
+        <br />    <polyline class="stroke-animation-inner" points="32,0 32,90"></polyline>
+        <br />    <polyline class="stroke-animation-inner" points="58,0 58,90"></polyline>
+        <br />    <polyline class="stroke-animation-outer" points="84,0 84,90"></polyline>
+        <br />  </svg>
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   {
     anim: <PulseBar2 />,
     bgColor: "rgb(210, 146, 146)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   {
     anim: <PulseBubble1 />,
     bgColor: "rgb(124, 168, 128)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   {
     anim: <PulseBubble2 />,
     bgColor: "rgb(139, 188, 191)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   {
     anim: <Ripple />,
     bgColor: "rgb(108, 126, 201)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   },
   // {
   //   anim: <Rect1 />,
@@ -155,7 +284,20 @@ export const pageData = [
   {
     anim: <CircleRotate />,
     bgColor: "rgb(188, 222, 181)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />  &#60;div&#62;&#60;/div&#62;
+      	<br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+      </code>
+    </pre>
   }
 ]
 

@@ -34,18 +34,21 @@ function BubbleMove() {
       animation: move-1 5s ease 0s infinite;
       z-index: 1;
     }
+
     div:nth-child(2) {
       top: 0;
       left: 30px;
       animation: move-2 5s ease 1s infinite;
       z-index: 2;
     }
+
     div:nth-child(3) {
       top: 0;
       left: 60px;
       animation: move-3 5s ease 2s infinite;
       z-index: 3;
     }
+
     div:nth-child(4) {
       top: 0;
       left: 90px;
@@ -140,6 +143,7 @@ function BubbleMove() {
       }
     }
   `;
+  
   return (
     <div css={styling} onClick={() => dispatch(setModalShow(true))}>
   	  <div></div>

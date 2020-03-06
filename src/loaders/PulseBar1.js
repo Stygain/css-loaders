@@ -1,9 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch } from 'react-redux';
+import { setModalShow } from '../redux/actions.js';
+
 function PulseBar1() {
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid green; */}
+
+    cursor: pointer;
 
     width: 120px;
     display: flex;
@@ -19,15 +26,19 @@ function PulseBar1() {
     div:nth-child(1) {
       animation: pulse .6s ease 0s infinite alternate;
     }
+
     div:nth-child(2) {
       animation: pulse .6s ease .2s infinite alternate;
     }
+
     div:nth-child(3) {
       animation: pulse .6s ease .4s infinite alternate;
     }
+
     div:nth-child(4) {
       animation: pulse .6s ease .6s infinite alternate;
     }
+
 
     @keyframes pulse {
       from {
@@ -42,8 +53,9 @@ function PulseBar1() {
       }
     }
   `;
+
   return (
-    <div css={styling}>
+    <div css={styling} onClick={() => dispatch(setModalShow(true))}>
       <div></div>
       <div></div>
       <div></div>
