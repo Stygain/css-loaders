@@ -5,7 +5,7 @@ import {
 } from './actions.js';
 
 
-function modalShowReducer(state = false, action) {
+function modalShowReducer(state = true, action) {
   switch (action.type) {
     case SET_MODAL_SHOW:
       return action.show;

@@ -11,18 +11,9 @@ import Modal from './Modal.js';
 function App() {
   const [clicked, setClicked] = useState(false);
 
-  const hamburgerStyle = css`
-    position: relative;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-  `;
-
   return (
     <div>
-  	  <div css={hamburgerStyle}>
-        <HamburgerX click={clicked} clickhandler={setClicked}/>
-      </div>
+      <HamburgerX click={clicked} clickhandler={setClicked}/>
       <Menu click={clicked}/>
       <Modal />
       <Carousel />

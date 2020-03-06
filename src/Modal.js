@@ -11,7 +11,7 @@ function Modal(props) {
   const dispatch = useDispatch();
 
   const styling = css`
-    border: 1px solid red;
+    ${'' /* border: 1px solid red; */}
 
     @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
     font-family: 'Spartan', sans-serif;
@@ -19,7 +19,7 @@ function Modal(props) {
     position: absolute;
     z-index: 1;
     opacity: 0%;
-    background-color: rgb(149, 189, 178);
+    ${'' /* background-color: rgb(149, 189, 178); */}
     text-align: center;
     margin: 0;
 
@@ -54,20 +54,21 @@ function Modal(props) {
       width: 100%;
       height: 100%;
 
-      background-color: rgb(255, 166, 143);
+      ${'' /* background-color: rgb(255, 166, 143); */}
 
       cursor: pointer;
     }
 
     .menu {
-      border: 1px solid red;
+      ${'' /* border: 1px solid red; */}
 
       min-width: 50%;
-      height: 50%;
+      max-height: 0;
       margin-bottom: 200%;
       border-radius: 10px;
-      padding: 10px;
-      ${'' /* margin: 10px; */}
+      padding: 0px 10px;
+
+      box-shadow: 0px 2px 6px 6px rgba(0, 0, 0, 0.49);
 
       background-color: rgb(255, 255, 255);
       z-index: 2;
@@ -77,8 +78,6 @@ function Modal(props) {
       align-items: center;
       justify-content: flex-start;
 
-      ${'' /* overflow-x: hidden; */}
-      ${'' /* overflow-y: scroll; */}
       overflow: hidden;
 
       transition: 0.8s ease-in-out 0s;
@@ -86,20 +85,27 @@ function Modal(props) {
 
     .menu.open {
       margin-bottom: 0;
+      min-height: 50%;
+      max-height: 70%;
 
       transition: 0.8s ease-in-out 0.3s;
     }
 
     .text-container {
-      border: 1px solid blue;
+      ${'' /* border: 1px solid blue; */}
 
       position: relative;
+      width: 100%;
+      padding: 4px 10px;
 
       background-color: rgb(255, 255, 255);
       text-align: left;
-      width: 100%;
 
       transition: background-color 0.3s ease;
+    }
+
+    .text-container.html {
+      border-bottom: 1px solid rgba(193, 193, 193, 0.31);
     }
 
     .text-container.css {
@@ -107,15 +113,17 @@ function Modal(props) {
     }
 
     .text-container:hover {
-      background-color: rgb(236, 236, 236);
+      background-color: rgb(249, 249, 249);
     }
 
     .text-container .type-tag {
-      border: 1px solid green;
+      ${'' /* border: 1px solid green; */}
 
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 5px;
+      right: 7px;
+
+      background-color: rgba(200, 200, 200, 0.73);
 
       ${'' /* width: 35px; */}
       ${'' /* height: 10px; */}
@@ -127,7 +135,6 @@ function Modal(props) {
       display: block;
       font-family: monospace;
       white-space: pre;
-      margin: 1em 0;
     }
   `;
   return (
@@ -165,15 +172,11 @@ function Modal(props) {
               <br />  border-color: rgb(55, 159, 228) transparent transparent transparent;
               <br />  animation: border-color-1 6s cubic-bezier(.76,0,.63,1) 0.25s infinite;
               <br />{'}'}
+<br />
               <br />div:nth-child(2) {'{'}
               <br />  border: 8px solid;
               <br />  border-color: transparent rgb(55, 159, 228) transparent transparent;
               <br />  animation: border-color-2 6s cubic-bezier(.76,0,.63,1) 0.5s infinite;
-              <br />{'}'}
-              <br />div:nth-child(3) {'{'}
-              <br />  border: 8px solid;
-              <br />  border-color: transparent transparent rgb(55, 159, 228) transparent;
-              <br />  animation: border-color-3 2s cubic-bezier(.76,0,.63,1) 0s infinite;
               <br />{'}'}
 <br />
               <br />@keyframes border-color-1 {'{'}

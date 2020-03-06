@@ -7,7 +7,7 @@ function Menu(props) {
     font-family: 'Spartan', sans-serif;
 
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     opacity: 0%;
     background-color: rgb(149, 189, 178);
     text-align: center;

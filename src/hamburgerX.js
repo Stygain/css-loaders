@@ -3,13 +3,18 @@ import { jsx, css } from '@emotion/core';
 
 function HamburgerX(props) {
   const styling = css`
+    position: relative;
+    top: 20px;
+    left: 20px;
     width: 35px;
     height: 30px;
+    padding: 8px;
+    z-index: 3;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
 
     &:hover {
       cursor: pointer;

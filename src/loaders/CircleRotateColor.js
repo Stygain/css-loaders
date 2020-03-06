@@ -82,27 +82,6 @@ function CircleRotate() {
         border-color: transparent rgb(55, 159, 228) transparent transparent;
       }
     }
-
-    @keyframes border-color-3 {
-      0% {
-        border-color: transparent transparent rgb(55, 159, 228) transparent;
-      }
-      25% {
-        border-color: transparent transparent transparent rgb(215, 98, 238);
-        transform: rotate(360deg);
-      }
-      50% {
-        border-color: rgb(241, 78, 8) transparent transparent transparent;
-        transform: rotate(720deg);
-      }
-      75% {
-        border-color: transparent rgb(241, 211, 8) transparent transparent;
-        transform: rotate(1080deg);
-      }
-      100% {
-        border-color: transparent transparent rgb(55, 159, 228) transparent;
-      }
-    }
   `;
   return (
     <div css={styling} onClick={() => dispatch(setModalShow(true))}>
