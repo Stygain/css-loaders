@@ -2,8 +2,8 @@
 import { jsx, css } from '@emotion/core';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getSlideIndex } from './redux/selectors.js';
-import { setSlideIndex } from './redux/actions.js';
+import { getSlideIndex } from '../redux/selectors.js';
+import { setSlideIndex } from '../redux/actions.js';
 
 
 function ProgressDots(props) {
@@ -63,6 +63,7 @@ function ProgressDots(props) {
       background-color: #000;
     }
   `;
+
   return (
     <div css={styling}>
       <div className="dot-container">

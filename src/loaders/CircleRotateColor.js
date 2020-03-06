@@ -2,7 +2,6 @@
 import { jsx, css } from '@emotion/core';
 
 import { useDispatch } from 'react-redux';
-import { getModalShow } from '../redux/selectors.js';
 import { setModalShow } from '../redux/actions.js';
 
 

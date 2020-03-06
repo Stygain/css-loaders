@@ -3,11 +3,11 @@ import { jsx, css } from '@emotion/core';
 import { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getSlideIndex } from './redux/selectors.js';
-import { setSlideIndex } from './redux/actions.js';
+import { getSlideIndex } from '../redux/selectors.js';
+import { setSlideIndex } from '../redux/actions.js';
 
 
-function ArrowRight(props) {
+function ArrowLeft(props) {
   const [ hover, setHover ] = useState(false);
 
   const slideIndex = useSelector(getSlideIndex);
@@ -27,8 +27,8 @@ function ArrowRight(props) {
       cursor: pointer;
     }
 
-    &.button-container.right {
-      right: 10px;
+    &.button-container.left {
+      left: 10px;
     }
 
     .arrow {
@@ -39,29 +39,29 @@ function ArrowRight(props) {
       transition: transform 0.2s ease;
     }
 
-    .arrow.top.right {
-      transform: translateY(10px) translateX(7px) rotate(45deg);
+    .arrow.top.left {
+      transform: translateY(10px) translateX(7px) rotate(-45deg);
     }
 
-    .arrow.bot.right {
-      transform: translateY(14px) translateX(7px) rotate(-45deg);
+    .arrow.bot.left {
+      transform: translateY(14px) translateX(7px) rotate(45deg);
     }
 
-    .arrow.top.right.hover {
-      transform: translateY(9px) translateX(6px) rotate(53deg);
+    .arrow.top.left.hover {
+      transform: translateY(9px) translateX(6px) rotate(-53deg);
     }
 
-    .arrow.bot.right.hover {
-      transform: translateY(15px) translateX(6px) rotate(-53deg);
+    .arrow.bot.left.hover {
+      transform: translateY(15px) translateX(6px) rotate(53deg);
     }
   `;
-  
+
   return (
     <div css={styling}
-      className="button-container right"
+      className="button-container left"
       onClick={
         () => {
-          dispatch(setSlideIndex(slideIndex + 1))
+          dispatch(setSlideIndex(slideIndex - 1))
         }
       }
       onMouseEnter={
@@ -74,10 +74,10 @@ function ArrowRight(props) {
           setHover(false);
         }
       }>
-      <div className={hover ? "arrow top right hover" : "arrow top right"}></div>
-      <div className={hover ? "arrow bot right hover" : "arrow bot right"}></div>
+      <div className={hover ? "arrow top left hover" : "arrow top left"}></div>
+      <div className={hover ? "arrow bot left hover" : "arrow bot left"}></div>
     </div>
   );
 }
 
-export default ArrowRight;
+export default ArrowLeft;

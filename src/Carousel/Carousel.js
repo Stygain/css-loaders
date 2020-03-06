@@ -1,27 +1,25 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { useState } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { getSlideIndex } from './redux/selectors.js';
-import { setModalShow } from './redux/actions.js';
+import { useSelector } from 'react-redux';
+import { getSlideIndex } from '../redux/selectors.js';
 
 import ArrowLeft from './ArrowLeft.js';
 import ArrowRight from './ArrowRight.js';
 import ProgressDots from './ProgressDots.js';
 
-import PulseBar1 from './loaders/pulseBar1.js';
-import PulseBar2 from './loaders/pulseBar2.js';
-import PulseBubble1 from './loaders/pulseBubble1.js';
-import PulseBubble2 from './loaders/pulseBubble2.js';
-import Ripple from './loaders/ripple.js';
-import Rect1 from './loaders/rect1.js';
-import Rect2 from './loaders/rect2.js';
-import CircleRotate from './loaders/circleRotate.js';
-import Square from './loaders/Square.js';
-import CircleRotateColor from './loaders/CircleRotateColor.js';
-import BarColor from './loaders/BarColor.js';
-import BubbleMove from './loaders/BubbleMove.js';
+import PulseBar1 from '../loaders/pulseBar1.js';
+import PulseBar2 from '../loaders/pulseBar2.js';
+import PulseBubble1 from '../loaders/pulseBubble1.js';
+import PulseBubble2 from '../loaders/pulseBubble2.js';
+import Ripple from '../loaders/ripple.js';
+// import Rect1 from '../loaders/rect1.js';
+// import Rect2 from '../loaders/rect2.js';
+import CircleRotate from '../loaders/circleRotate.js';
+import Square from '../loaders/Square.js';
+import CircleRotateColor from '../loaders/CircleRotateColor.js';
+import BarColor from '../loaders/BarColor.js';
+import BubbleMove from '../loaders/BubbleMove.js';
 
 
 
@@ -128,10 +126,7 @@ function Content(props) {
 }
 
 function Carousel() {
-  // const [ slideIndex, setCurrent ] = useState(0);
   const slideIndex = useSelector(getSlideIndex);
-
-  const dispatch = useDispatch();
 
   const styling = css`
     position: absolute;

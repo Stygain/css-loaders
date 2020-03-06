@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { useState } from 'react';
 
-import HamburgerX from './hamburgerX.js';
-import Menu from './menu.js';
-import Carousel from './carousel.js';
+import HamburgerX from './HamburgerX.js';
+import Menu from './Menu.js';
+import Carousel from './Carousel/Carousel.js';
 import Modal from './Modal.js';
 
 
