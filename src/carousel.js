@@ -2,6 +2,10 @@
 import { jsx, css } from '@emotion/core';
 import { useState } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getSlideIndex } from './redux/selectors.js';
+import { setModalShow } from './redux/actions.js';
+
 import ArrowLeft from './ArrowLeft.js';
 import ArrowRight from './ArrowRight.js';
 import ProgressDots from './ProgressDots.js';
@@ -124,7 +128,10 @@ function Content(props) {
 }
 
 function Carousel() {
-  const [ current, setCurrent ] = useState(0);
+  // const [ slideIndex, setCurrent ] = useState(0);
+  const slideIndex = useSelector(getSlideIndex);
+
+  const dispatch = useDispatch();
 
   const styling = css`
     position: absolute;
@@ -137,17 +144,17 @@ function Carousel() {
 
   return (
     <div css={styling}>
-      {current === 0 ?
-        <ArrowRight current={current} setCurrent={setCurrent} /> :
-        current === pageData.length-1 ?
-          <ArrowLeft current={current} setCurrent={setCurrent} /> :
+      {slideIndex === 0 ?
+        <ArrowRight /> :
+        slideIndex === pageData.length-1 ?
+          <ArrowLeft /> :
           <div>
-            <ArrowLeft current={current} setCurrent={setCurrent} />
-            <ArrowRight current={current} setCurrent={setCurrent} />
+            <ArrowLeft />
+            <ArrowRight />
           </div>}
 
-      <Content item={pageData[current]} />
-      <ProgressDots current={current} data={pageData} setCurrent={setCurrent} />
+      <Content item={pageData[slideIndex]} />
+      <ProgressDots data={pageData} />
   	</div>
   );
 }

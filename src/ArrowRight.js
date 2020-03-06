@@ -2,9 +2,17 @@
 import { jsx, css } from '@emotion/core';
 import { useState } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getSlideIndex } from './redux/selectors.js';
+import { setSlideIndex } from './redux/actions.js';
+
 
 function ArrowRight(props) {
   const [ hover, setHover ] = useState(false);
+
+  const slideIndex = useSelector(getSlideIndex);
+
+  const dispatch = useDispatch();
 
   const styling = css`
     &.button-container {
@@ -47,12 +55,13 @@ function ArrowRight(props) {
       transform: translateY(15px) translateX(6px) rotate(-53deg);
     }
   `;
+  
   return (
     <div css={styling}
       className="button-container right"
       onClick={
         () => {
-          props.setCurrent(props.current + 1)
+          dispatch(setSlideIndex(slideIndex + 1))
         }
       }
       onMouseEnter={

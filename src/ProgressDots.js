@@ -1,8 +1,16 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getSlideIndex } from './redux/selectors.js';
+import { setSlideIndex } from './redux/actions.js';
+
 
 function ProgressDots(props) {
+  const slideIndex = useSelector(getSlideIndex);
+
+  const dispatch = useDispatch();
+
   const styling = css`
     ${'' /* border: 1px solid blue; */}
 
@@ -43,13 +51,13 @@ function ProgressDots(props) {
       transform: scale(1.3);
     }
 
-    .outer-dot:nth-child(${props.current + 1}) {
+    .outer-dot:nth-child(${slideIndex + 1}) {
       ${'' /* border: 4px solid orange; */}
 
       transform: scale(1.7);
     }
 
-    .outer-dot:nth-child(${props.current + 1}) .dot {
+    .outer-dot:nth-child(${slideIndex + 1}) .dot {
       ${'' /* border: 4px solid orange; */}
 
       background-color: #000;
@@ -60,9 +68,11 @@ function ProgressDots(props) {
       <div className="dot-container">
         {props.data.map((data, index) => {
           return (
-            <div className="outer-dot" onClick={() => {
-              props.setCurrent(index)
-            }}>
+            <div className="outer-dot" onClick={
+              () => {
+                dispatch(setSlideIndex(index))
+              }
+            }>
               <div className="dot" key={index}></div>
             </div>);
         })}
