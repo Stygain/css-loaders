@@ -23,11 +23,84 @@ import BubbleMove from '../loaders/BubbleMove.js';
 
 
 
-const pageData = [
+export const pageData = [
   {
     anim: <CircleRotateColor />,
     bgColor: "rgba(232, 232, 232, 1)",
-    accentColor: ""
+    accentColor: "",
+    html:
+    <pre>
+      <code>
+        &#60;div&#62;
+        <br />  &#60;div&#62;&#60;/div&#62;
+        <br />  &#60;div&#62;&#60;/div&#62;
+        <br />&#60;/div&#62;
+      </code>
+    </pre>,
+    css: <pre>
+      <code>
+        div {'{'}
+        <br />  width: 60px;
+        <br />  height: 60px;
+        <br />  border-radius: 50%;
+        <br />  position: absolute;
+        <br />{'}'}
+<br />
+        <br />div:nth-child(1) {'{'}
+        <br />  border: 8px solid;
+        <br />  border-color: rgb(55, 159, 228) transparent transparent transparent;
+        <br />  animation: border-color-1 6s cubic-bezier(.76,0,.63,1) 0.25s infinite;
+        <br />{'}'}
+<br />
+        <br />div:nth-child(2) {'{'}
+        <br />  border: 8px solid;
+        <br />  border-color: transparent rgb(55, 159, 228) transparent transparent;
+        <br />  animation: border-color-2 6s cubic-bezier(.76,0,.63,1) 0.5s infinite;
+        <br />{'}'}
+<br />
+        <br />@keyframes border-color-1 {'{'}
+        <br />  0% {'{'}
+        <br />    border-color: rgb(55, 159, 228) transparent transparent transparent;
+        <br />  {'}'}
+        <br />  25% {'{'}
+        <br />    border-color: transparent rgb(215, 98, 238) transparent transparent;
+        <br />    transform: rotate(360deg);
+        <br />  {'}'}
+        <br />  50% {'{'}
+        <br />    border-color: transparent transparent rgb(241, 78, 8) transparent;
+        <br />    transform: rotate(720deg);
+        <br />  {'}'}
+        <br />  75% {'{'}
+        <br />    border-color: transparent transparent transparent rgb(241, 211, 8);
+        <br />    transform: rotate(1080deg);
+        <br />  {'}'}
+        <br />  100% {'{'}
+        <br />    border-color: rgb(55, 159, 228) transparent transparent transparent;
+        <br />  {'}'}
+        <br />{'}'}
+<br />
+        <br />@keyframes border-color-2 {'{'}
+        <br />  0% {'{'}
+        <br />    border-color: transparent rgb(55, 159, 228) transparent transparent;
+        <br />  {'}'}
+        <br />  25% {'{'}
+        <br />    border-color: transparent transparent rgb(215, 98, 238) transparent;
+        <br />    transform: rotate(360deg);
+        <br />  {'}'}
+        <br />  50% {'{'}
+        <br />    border-color: transparent transparent transparent rgb(241, 78, 8);
+        <br />    transform: rotate(720deg);
+        <br />  {'}'}
+        <br />  75% {'{'}
+        <br />    border-color: rgb(241, 211, 8) transparent transparent transparent;
+        <br />    transform: rotate(1080deg);
+        <br />  {'}'}
+        <br />  100% {'{'}
+        <br />    border-color: transparent rgb(55, 159, 228) transparent transparent;
+        <br />  {'}'}
+        <br />{'}'}
+      </code>
+    </pre>
   },
   {
     anim: <BubbleMove />,

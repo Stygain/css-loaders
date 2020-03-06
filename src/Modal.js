@@ -2,11 +2,14 @@
 import { jsx, css } from '@emotion/core';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getModalShow } from './redux/selectors.js';
+import { getModalShow, getSlideIndex } from './redux/selectors.js';
 import { setModalShow } from './redux/actions.js';
+
+import { pageData } from './Carousel/Carousel.js';
 
 function Modal(props) {
   const modalShow = useSelector(getModalShow);
+  const slideIndex = useSelector(getSlideIndex);
 
   const dispatch = useDispatch();
 
@@ -33,16 +36,12 @@ function Modal(props) {
     align-items: center;
     justify-content: center;
 
-    transition: 0.8s ease-in-out 0.2s;
-
     &.open {
       opacity: 100%;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
-
-      transition: 0.8s ease-in-out;
     }
 
     .background {
@@ -80,15 +79,13 @@ function Modal(props) {
 
       overflow: hidden;
 
-      transition: 0.8s ease-in-out 0s;
+      transition: 0.8s ease-in-out;
     }
 
     .menu.open {
       margin-bottom: 0;
       min-height: 50%;
       max-height: 70%;
-
-      transition: 0.8s ease-in-out 0.3s;
     }
 
     .text-container {
@@ -145,97 +142,14 @@ function Modal(props) {
           <div className="type-tag">
             HTML
           </div>
-          <pre>
-            <code>
-              &#60;div&#62;
-            	<br />  &#60;div&#62;&#60;/div&#62;
-            	<br />  &#60;div&#62;&#60;/div&#62;
-            	<br />&#60;/div&#62;
-            </code>
-          </pre>
+          {pageData[slideIndex].html}
         </div>
         <div className="text-container css">
           <div className="type-tag">
             CSS
           </div>
-          <pre>
-            <code>
-              div {'{'}
-              <br />  width: 60px;
-              <br />  height: 60px;
-              <br />  border-radius: 50%;
-              <br />  position: absolute;
-              <br />{'}'}
-<br />
-              <br />div:nth-child(1) {'{'}
-              <br />  border: 8px solid;
-              <br />  border-color: rgb(55, 159, 228) transparent transparent transparent;
-              <br />  animation: border-color-1 6s cubic-bezier(.76,0,.63,1) 0.25s infinite;
-              <br />{'}'}
-<br />
-              <br />div:nth-child(2) {'{'}
-              <br />  border: 8px solid;
-              <br />  border-color: transparent rgb(55, 159, 228) transparent transparent;
-              <br />  animation: border-color-2 6s cubic-bezier(.76,0,.63,1) 0.5s infinite;
-              <br />{'}'}
-<br />
-              <br />@keyframes border-color-1 {'{'}
-              <br />  0% {'{'}
-              <br />    border-color: rgb(55, 159, 228) transparent transparent transparent;
-              <br />  {'}'}
-              <br />  25% {'{'}
-              <br />    border-color: transparent rgb(215, 98, 238) transparent transparent;
-              <br />    transform: rotate(360deg);
-              <br />  {'}'}
-              <br />  50% {'{'}
-              <br />    border-color: transparent transparent rgb(241, 78, 8) transparent;
-              <br />    transform: rotate(720deg);
-              <br />  {'}'}
-              <br />  75% {'{'}
-              <br />    border-color: transparent transparent transparent rgb(241, 211, 8);
-              <br />    transform: rotate(1080deg);
-              <br />  {'}'}
-              <br />  100% {'{'}
-              <br />    border-color: rgb(55, 159, 228) transparent transparent transparent;
-              <br />  {'}'}
-              <br />{'}'}
-<br />
-              <br />@keyframes border-color-2 {'{'}
-              <br />  0% {'{'}
-              <br />    border-color: transparent rgb(55, 159, 228) transparent transparent;
-              <br />  {'}'}
-              <br />  25% {'{'}
-              <br />    border-color: transparent transparent rgb(215, 98, 238) transparent;
-              <br />    transform: rotate(360deg);
-              <br />  {'}'}
-              <br />  50% {'{'}
-              <br />    border-color: transparent transparent transparent rgb(241, 78, 8);
-              <br />    transform: rotate(720deg);
-              <br />  {'}'}
-              <br />  75% {'{'}
-              <br />    border-color: rgb(241, 211, 8) transparent transparent transparent;
-              <br />    transform: rotate(1080deg);
-              <br />  {'}'}
-              <br />  100% {'{'}
-              <br />    border-color: transparent rgb(55, 159, 228) transparent transparent;
-              <br />  {'}'}
-              <br />{'}'}
-            </code>
-          </pre>
+          {pageData[slideIndex].css}
         </div>
-        {/* <div className="item">
-          Adam Barton
-        </div>
-        <div className="item link">
-          <a href="https://github.com/Stygain">
-            Github
-          </a>
-        </div>
-        <div className="item link">
-          <a href="https://stygain.github.io/northwestvision/">
-            Photography
-          </a>
-        </div> */}
       </div>
   	</div>
 
