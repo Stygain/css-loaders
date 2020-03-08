@@ -34,23 +34,14 @@ const colors = [
   "rgb(189, 149, 174)"
 ]
 
-// console.log("MATH")
-// var randomNum = Math.random();
-// console.log(randomNum)
-// console.log((randomNum * (colors.length - 1)))
-// console.log(Math.round(randomNum * (colors.length - 1)))
-
 function randomizeMenuColorReducer(state = "rgb(149, 189, 178)", action) {
   switch (action.type) {
     case RANDOMIZE_MENU_COLOR:
-      // Do randomizing here
       var newColor = state;
-      console.log("current color: " + state);
       while (newColor === state) {
-        console.log("am i in here");
         newColor = colors[Math.round(Math.random() * (colors.length - 1))]
-        console.log("new color?: " + newColor);
       }
+      console.log("new color: " + newColor);
       return newColor;
 
     default:
