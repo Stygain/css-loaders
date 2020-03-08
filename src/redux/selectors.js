@@ -5,3 +5,7 @@ export function getModalShow(state) {
 export function getSlideIndex(state) {
   return state.slideIndex;
 }
+
+export function getCurrMenuColor(state) {
+  return state.currMenuColor;
+}

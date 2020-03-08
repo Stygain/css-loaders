@@ -1,7 +1,13 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useDispatch } from 'react-redux';
+import { randomizeMenuColor } from './redux/actions.js';
+
+
 function HamburgerX(props) {
+  const dispatch = useDispatch();
+
   const styling = css`
     position: relative;
     top: 20px;
@@ -41,10 +47,14 @@ function HamburgerX(props) {
       background-color: rgb(117, 117, 117);
     }
   `;
+
   return (
     <div css={styling} id="button" onClick={
         () => {
           props.clickhandler(!props.click)
+          if (!props.click) {
+            dispatch(randomizeMenuColor());
+          }
         }
       }>
   	  <div className={props.click === true ? "change" : ""}></div>

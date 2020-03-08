@@ -1,7 +1,13 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 
+import { useSelector } from 'react-redux';
+import { getCurrMenuColor } from './redux/selectors.js';
+
+
 function Menu(props) {
+  const currMenuColor = useSelector(getCurrMenuColor);
+
   const styling = css`
     @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
     font-family: 'Spartan', sans-serif;
@@ -9,7 +15,7 @@ function Menu(props) {
     position: absolute;
     z-index: 2;
     opacity: 0%;
-    background-color: rgb(149, 189, 178);
+    background-color: ${currMenuColor};
     text-align: center;
     margin: 0;
 
@@ -144,6 +150,7 @@ function Menu(props) {
       }
     }
   `;
+
   return (
     <div css={styling} className={props.click === true ? "open" : ""}>
       <div className={props.click === true ? "menu open" : "menu"}>
