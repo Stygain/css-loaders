@@ -31,7 +31,8 @@ const colors = [
   "rgb(149, 189, 178)",
   "rgb(149, 159, 189)",
   "rgb(211, 242, 179)",
-  "rgb(189, 149, 174)"
+  "rgb(189, 149, 174)",
+  "rgb(219, 161, 91)"
 ]
 
 function randomizeMenuColorReducer(state = "rgb(149, 189, 178)", action) {

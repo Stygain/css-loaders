@@ -26,7 +26,7 @@ import BubbleMove from '../loaders/BubbleMove.js';
 export const pageData = [
   {
     anim: <CircleRotateColor />,
-    bgColor: "rgba(232, 232, 232, 1)",
+    bgColor: "rgba(238, 212, 212, 1)",
     accentColor: "",
     html:
     <pre>
@@ -249,7 +249,7 @@ export const pageData = [
   },
   {
     anim: <Square />,
-    bgColor: "rgb(153, 153, 153)",
+    bgColor: "rgb(120, 84, 84)",
     accentColor: "",
     html:
     <pre>
