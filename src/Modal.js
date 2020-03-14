@@ -154,7 +154,6 @@ function Modal(props) {
         </div>
       </div>
   	</div>
-
   );
 }
 
