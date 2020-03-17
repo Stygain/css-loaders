@@ -12,8 +12,8 @@ function Menu(props) {
     @import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
     font-family: 'Spartan', sans-serif;
 
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 15;
     opacity: 0%;
     background-color: ${currMenuColor};
     text-align: center;
@@ -100,6 +100,10 @@ function Menu(props) {
       transition: 0.8s ease-in-out 1.4s;
     }
 
+    .menu.open .item:nth-child(4) {
+      transition: 0.8s ease-in-out 1.8s;
+    }
+
     .item:nth-child(1) {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -158,13 +162,18 @@ function Menu(props) {
           Adam Barton
         </div>
         <div className="item link">
-          <a href="https://github.com/Stygain">
-            Github
+          <a href="https://stygain.github.io/northwestvision/">
+            Photography
           </a>
         </div>
         <div className="item link">
-          <a href="https://stygain.github.io/northwestvision/">
-            Photography
+          <a href="https://stygain.github.io/push-buttons/">
+            Buttons
+          </a>
+        </div>
+        <div className="item link">
+          <a href="https://github.com/Stygain">
+            Github
           </a>
         </div>
       </div>

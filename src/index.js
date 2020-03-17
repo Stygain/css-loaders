@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { jsx, Global, css } from '@emotion/core';
 
@@ -22,9 +21,7 @@ ReactDOM.render(
   <div>
     <Global styles={globalStyles} />
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </Provider>
   </div>, document.getElementById('root'));
 
