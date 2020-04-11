@@ -15,7 +15,7 @@ function HamburgerX(props) {
     width: 35px;
     height: 30px;
     padding: 8px;
-    z-index: 3;
+    z-index: 25;
 
     display: flex;
     flex-direction: column;
