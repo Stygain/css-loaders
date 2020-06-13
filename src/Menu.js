@@ -104,6 +104,10 @@ function Menu(props) {
       transition: 0.8s ease-in-out 1.8s;
     }
 
+    .menu.open .item:nth-child(5) {
+      transition: 0.8s ease-in-out 2.2s;
+    }
+
     .item:nth-child(1) {
       margin-top: 20px;
       margin-bottom: 20px;
@@ -162,7 +166,7 @@ function Menu(props) {
           Adam Barton
         </div>
         <div className="item link">
-          <a href="https://stygain.github.io/northwestvision/">
+          <a href="http://northwestvision.pictures">
             Photography
           </a>
         </div>
@@ -174,6 +178,11 @@ function Menu(props) {
         <div className="item link">
           <a href="https://github.com/Stygain">
             Github
+          </a>
+        </div>
+        <div className="item link">
+          <a href="http://adambarton.info">
+            About Me
           </a>
         </div>
       </div>
